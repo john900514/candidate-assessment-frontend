@@ -121,8 +121,5 @@ locations = locations.map((location) => {
 });
 
 export default defineEventHandler((event) => {
-  // const locations = await $fetch('/locations');
-  const club_id = event.context;
-  console.log({ club_id });
   return locations;
 });

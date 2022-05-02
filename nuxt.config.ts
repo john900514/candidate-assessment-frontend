@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     components:[
         '~/components',
         '~/components/HomePageCarousel',
-        '~/components/HomePageCarousel/Slides'
-    ]
+        '~/components/HomePageCarousel/Slides',
+        '~/components/locations',
+    ],
 })

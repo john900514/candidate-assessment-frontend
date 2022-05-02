@@ -1,4 +1,6 @@
-const locations = [
+// import locations from '../../../data/locations';
+
+let locations = [
   {
     id: "48aee6ec-393a-413c-9439-6ea9c68d477c",
     city: "West Des Moines",
@@ -12,8 +14,8 @@ const locations = [
     address2: "NULL",
     zip_code: "50265",
     club_name: "Iowa",
-    created_at: "2022-04-26 19:04:55.000000",
-    updated_at: "2022-04-26 19:04:55.000000",
+    created_at: "2022-05-02 13:41:33.000000",
+    updated_at: "2022-05-02 13:41:33.000000",
   },
   {
     id: "50cc0552-827d-4c6a-b818-65fcf2135620",
@@ -28,8 +30,8 @@ const locations = [
     address2: "NULL",
     zip_code: "68127",
     club_name: "84th & Q Street",
-    created_at: "2022-04-26 19:04:55.000000",
-    updated_at: "2022-04-26 19:04:55.000000",
+    created_at: "2022-05-02 13:41:33.000000",
+    updated_at: "2022-05-02 13:41:33.000000",
   },
   {
     id: "71fb1038-f31b-4e3e-bd61-e6422a99c7cd",
@@ -44,8 +46,8 @@ const locations = [
     address2: "NULL",
     zip_code: "66062",
     club_name: "Olathe",
-    created_at: "2022-04-26 19:04:55.000000",
-    updated_at: "2022-04-26 19:04:55.000000",
+    created_at: "2022-05-02 13:41:33.000000",
+    updated_at: "2022-05-02 13:41:33.000000",
   },
   {
     id: "995deb97-a583-45e7-a980-a5c2b2f41838",
@@ -60,8 +62,8 @@ const locations = [
     address2: "NULL",
     zip_code: "68144",
     club_name: "132nd & Center",
-    created_at: "2022-04-26 19:04:55.000000",
-    updated_at: "2022-04-26 19:04:55.000000",
+    created_at: "2022-05-02 13:41:33.000000",
+    updated_at: "2022-05-02 13:41:33.000000",
   },
   {
     id: "bc1ce913-79c8-420e-9dd0-6778204964cc",
@@ -76,8 +78,8 @@ const locations = [
     address2: "#401",
     zip_code: "68131",
     club_name: "Midtown Crossing",
-    created_at: "2022-04-26 19:04:55.000000",
-    updated_at: "2022-04-26 19:04:55.000000",
+    created_at: "2022-05-02 13:41:33.000000",
+    updated_at: "2022-05-02 13:41:33.000000",
   },
   {
     id: "eacab1c1-0305-4bf8-a7f7-d1e430746453",
@@ -92,8 +94,8 @@ const locations = [
     address2: "NULL",
     zip_code: "68510",
     club_name: "Lincoln",
-    created_at: "2022-04-26 19:04:55.000000",
-    updated_at: "2022-04-26 19:04:55.000000",
+    created_at: "2022-05-02 13:41:33.000000",
+    updated_at: "2022-05-02 13:41:33.000000",
   },
   {
     id: "ebe3828e-875c-405a-969a-0667cfa1436c",
@@ -108,11 +110,19 @@ const locations = [
     address2: "NULL",
     zip_code: "66212",
     club_name: "Overland Park",
-    created_at: "2022-04-26 19:04:55.000000",
-    updated_at: "2022-04-26 19:04:55.000000",
+    created_at: "2022-05-02 13:41:33.000000",
+    updated_at: "2022-05-02 13:41:33.000000",
   },
 ];
 
+locations = locations.map((location) => {
+  location.hours = JSON.parse(location.hours);
+  return location;
+});
+
 export default defineEventHandler((event) => {
+  // const locations = await $fetch('/locations');
+  const club_id = event.context;
+  console.log({ club_id });
   return locations;
 });

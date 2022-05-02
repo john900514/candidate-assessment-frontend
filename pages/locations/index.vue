@@ -13,7 +13,7 @@
         <div class="w-full mb-4" v-for="{club_name, club_id} in locations">
           <a
             class="btn w-[95%] btn-outline rounded-[0px] hover:text-secondary text-2xl"
-            :href="'/clubs/' + club_id"
+            :href="'/locations/' + club_id"
             >{{ club_name }}</a
           >
         </div>

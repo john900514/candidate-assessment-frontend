@@ -81,12 +81,14 @@
 </template>
 
 <script>
+import Noty from 'noty';
 
 export default {
     name: "DefaultHeader",
     data() {
         return {
             showSidebar: false,
+            Noty
         }
     },
     methods: {

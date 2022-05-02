@@ -56,9 +56,16 @@
 </template>
 
 <script>
+import Noty from 'noty';
+
 export default {
     name: "DefaultFooter",
     props: ['prefooter'],
+     data() {
+        return {
+            Noty
+        }
+    },
     methods: {
         notAvailable() {
             new Noty({

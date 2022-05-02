@@ -27,11 +27,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "DefaultLayout",
-  props: ["showPrefooter"],
-};
+<script setup>
+import "noty/lib/noty.css"
+import "noty/lib/themes/sunset.css"
 </script>
 
 <style scoped></style>

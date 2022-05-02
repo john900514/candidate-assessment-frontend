@@ -20,9 +20,7 @@
       </p>
     </div>
   </div>
-  <!-- <club-hours :hours="hoursTranslated" v-if="hoursTranslated.length > 0"/> -->
   <club-hours :hours="location.hours" />
-  <!-- <club-hours /> -->
   <!-- </template> -->
   <!-- 
         <template v-slot:content>

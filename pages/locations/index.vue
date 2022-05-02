@@ -10,7 +10,7 @@
       <div
         class="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 md:grid-rows-3 mx-24"
       >
-        <div class="w-full mb-4" v-for="{club_name, club_id} in locations">
+        <div class="w-full mb-4" v-for="{ club_name, club_id } in locations">
           <a
             class="btn w-[95%] btn-outline rounded-[0px] hover:text-secondary text-2xl"
             :href="'/locations/' + club_id"
@@ -23,5 +23,5 @@
 </template>
 
 <script setup>
-const {data: locations} = await useFetch('/api/locations')
+const { data: locations } = await useFetch("/api/locations");
 </script>

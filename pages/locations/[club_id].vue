@@ -30,7 +30,7 @@
 
 <style scoped>
 .banner-bg {
-  background-image: "Hero-BG-2x.jpeg";
+  background-image: url(/Hero-BG-2x.jpeg);
 }
 </style>
 

@@ -3,7 +3,7 @@
         <input id="my-drawer-4" type="checkbox" class="drawer-toggle" :checked="showSidebar">
         <div class="drawer-side fixed" :class="showSidebar ? 'z-50 h-screen' : ''">
             <label for="my-drawer-4" class="drawer-overlay"></label>
-            <ul class="menu p-4 overflow-y-auto w-screen sm:w-96 bg-slightly-transparent-black text-base-content">
+            <ul class="menu p-4 overflow-y-auto w-screen sm:w-96 bg-black bg-opacity-[80%] text-base-content">
                 <div class="text-right">
                     <label for="my-drawer-4" class="">
                         <button type="button" class="inline-flex items-center justify-center p-2 ml-3 text-white rounded-full hover:text-secondary hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cool-indigo-500" @click="toggleShowSidebar()">

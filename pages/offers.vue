@@ -3,6 +3,10 @@
             <carousel :slide-components="slideComponents"></carousel>
         </template> -->
 
+          <!-- <template #layoutExtraHead>
+            <span class="bg-black p-32">EXTRA HEAD</span>
+        </template> -->
+
   <div id="landing" class="bg-slate-600 py-24 px-16">
     <div class="section-heading text-center mb-20">
       <h1 class="text-black text-5xl md:text-6xl font-black tracking-wide">

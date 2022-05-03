@@ -1,7 +1,7 @@
 <template>
   <!-- <template #layoutExtraHead> -->
 
-    <!-- <div class="w-full h-2/5 bg-slate-600 pt-[30%] md:pt-[15%] banner-bg">
+    <div class="w-full h-2/5 bg-slate-600 pt-[30%] md:pt-[15%] banner-bg">
       <div class="text-center pb-36">
         <h2
           class="text-4xl md:text-7xl uppercase text-secondary font-black tracking-wider"
@@ -21,8 +21,7 @@
         </p>
       </div>
     </div>
-    <club-hours :hours="location.hours" /> -->
-    <enroll-now-banner/>
+    <club-hours :hours="location.hours" />
   <!-- </template> -->
 </template>
 

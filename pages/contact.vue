@@ -30,7 +30,7 @@
           {{ form.errors.message }}
         </div> -->
       </div>
-      <button type="submit" class="btn btn-outline">Submit</button>
+      <button type="submit" class="btn btn-secondary">Submit</button>
     </form>
     <!-- /* button {
   @apply p-4 bg-blue-500 rounded-sm;

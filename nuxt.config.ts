@@ -16,5 +16,6 @@ export default defineNuxtConfig({
         '~/components/HomePageCarousel',
         '~/components/HomePageCarousel/Slides',
         '~/components/locations',
+        '~/components/page-specific-headers',
     ],
 })

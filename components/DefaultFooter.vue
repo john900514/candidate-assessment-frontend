@@ -9,7 +9,7 @@
             </div>
         </div>
         <div id="rhombusImageWrapper" class="hidden md:flex md:w-3/5 object-contain">
-            <!-- <img :src="$page.props.footerShardImg" id="rhombusImg" alt="Rhombus Image" class="h-[47rem] w-full"> -->
+            <img src="CTA-image.png" id="rhombusImg" alt="Rhombus Image" class="h-[47rem] w-full">
         </div>
 
         <div id="emptyRow"></div>

@@ -12,24 +12,44 @@
   <div class="min-h-screen overflow-hidden">
     <div class="relative overflow-hidden bg-primary from-gray-50 to-white">
       <div class="relative">
-        <default-header>
+        <!-- <default-header>
           <template #extraHead>
             <main class="w-full bg-primary">
               <slot name="layoutExtraHead"></slot>
             </main>
           </template>
+        </default-header> -->
+        <default-header>
+          <main class="w-full bg-primary"></main>
         </default-header>
       </div>
     </div>
-
     <NuxtPage />
     <default-footer :prefooter="showPrefooter"></default-footer>
   </div>
 </template>
 
 <script setup>
-import "noty/lib/noty.css"
-import "noty/lib/themes/sunset.css"
+import "noty/lib/noty.css";
+import "noty/lib/themes/sunset.css";
+
+const route = useRoute();
+console.log({ route: JSON.parse(JSON.stringify(route)) });
+const getBannerImg = () => {
+  switch (route) {
+    case "/":
+      return "test";
+    case "/offers":
+      return "offers";
+    default:
+      return "default";
+  }
+};
+const bannerImg = getBannerImg();
+
+const showPrefooter = computed(() => {
+  return !route.name.startsWith("locations-") && route.name !== "contact";
+});
 </script>
 
 <style scoped></style>

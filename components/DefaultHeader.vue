@@ -257,6 +257,7 @@
   <main class="w-full bg-primary">
     <location-header v-if="route?.name === 'locations-club_id'" />
     <home-page-header v-if="route?.name === 'index'" />
+    <offer-page-header v-if="route?.name === 'offers'" />
   </main>
 </template>
 
@@ -297,10 +298,10 @@
 <script setup>
 import Noty from "noty";
 
-let showSidebar = false;
+const showSidebar = ref(false);
 
 const toggleShowSidebar = () => {
-  this.showSidebar = !this.showSidebar;
+  showSidebar.value = !showSidebar.value;
 };
 
 const notAvailable = () => {

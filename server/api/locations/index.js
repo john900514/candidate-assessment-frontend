@@ -1,5 +1,3 @@
-// import locations from '../../../data/locations';
-
 let locations = [
   {
     id: "48aee6ec-393a-413c-9439-6ea9c68d477c",

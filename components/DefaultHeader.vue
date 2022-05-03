@@ -283,7 +283,7 @@ const route = useRoute();
 </script>
 
 <style scoped>
-.drawer{
-    height: unset;
+.drawer {
+  height: unset;
 }
 </style>

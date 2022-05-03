@@ -154,7 +154,7 @@ const route = useRoute();
 
 const showPrefooter = computed(() => {
   switch (route.name) {
-    case 'locations-club_id':
+    case "locations-club_id":
       return false;
     default:
       return true;

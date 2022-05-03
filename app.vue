@@ -12,11 +12,11 @@
   <div class="min-h-screen overflow-hidden">
     <div class="relative overflow-hidden bg-primary from-gray-50 to-white">
       <div class="relative">
-        <default-header/>
+        <default-header />
       </div>
     </div>
     <NuxtPage />
-    <default-footer :prefooter="showPrefooter"></default-footer>
+    <default-footer />
   </div>
 </template>
 

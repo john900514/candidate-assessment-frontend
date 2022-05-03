@@ -261,40 +261,6 @@
   </main>
 </template>
 
-//
-<script>
-// import Noty from "noty";
-
-// export default {
-//   name: "DefaultHeader",
-//   data() {
-//     return {
-//       showSidebar: false,
-//       Noty,
-//     };
-//   },
-//   methods: {
-//     toggleShowSidebar() {
-//       this.showSidebar = !this.showSidebar;
-//     },
-//     notAvailable() {
-//       new Noty({
-//         type: "warning",
-//         theme: "sunset",
-//         text: "Feature Not Available!",
-//         timeout: 7500,
-//       }).show();
-//     },
-//   },
-//   setup() {
-//     const route = useRoute();
-
-//     return { route };
-//   },
-// };
-//
-</script>
-
 <script setup>
 import Noty from "noty";
 
@@ -316,4 +282,8 @@ const notAvailable = () => {
 const route = useRoute();
 </script>
 
-<style scoped></style>
+<style scoped>
+.drawer{
+    height: unset;
+}
+</style>

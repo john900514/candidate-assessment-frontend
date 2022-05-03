@@ -4,42 +4,61 @@
     <form @submit.prevent="handleSubmit" class="flex flex-col gap-4 mb-2">
       <div class="form-control">
         <label for="name">Name</label>
-        <input type="text" id="name" />
-        <!-- <div v-if="form.errors.name" class="form-error">
-          {{ form.errors.name }}
-        </div> -->
+        <input type="text" id="name" v-model="form.name" />
       </div>
       <div class="form-control">
         <label for="name">Email</label>
-        <input type="email" id="email" />
-        <!-- <div v-if="form.errors.email" class="form-error">
-          {{ form.errors.email }}
-        </div> -->
+        <input type="email" id="email" v-model="form.email" />
       </div>
       <div class="form-control">
         <label for="name">Phone</label>
-        <phone-input id="phone" />
-        <!-- <div v-if="form.errors.phone" class="form-error">
-          {{ form.errors.phone }}
-        </div> -->
+        <phone-input id="phone" v-model="form.phone" />
       </div>
       <div class="form-control">
         <label for="name">Message</label>
-        <textarea id="message" />
-        <!-- <div v-if="form.errors.message" class="form-error">
-          {{ form.errors.message }}
-        </div> -->
+        <textarea id="message" v-model="form.message" />
       </div>
       <button type="submit" class="btn btn-secondary">Submit</button>
     </form>
-    <!-- /* button {
-  @apply p-4 bg-blue-500 rounded-sm;
-} */ -->
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Noty from "noty";
 
+let loading = false;
+
+const form = reactive({
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+});
+
+const handleSubmit = async () => {
+  loading = true;
+  const response = await $fetch("/api/contact", {
+    method: "POST",
+    body: form,
+  });
+
+  if (response) {
+    new Noty({
+      theme: "sunset",
+      type: "success",
+      text: "Success. We will contact you soon!",
+    }).show();
+    loading = false;
+  } else {
+    new Noty({
+      theme: "sunset",
+      type: "error",
+      text: "An error occurred - " + err,
+    }).show();
+    loading = false;
+  }
+};
+</script>
 <style scoped>
 form {
   @apply w-[20rem];
@@ -51,8 +70,8 @@ form {
 input {
   @apply input input-bordered;
 }
-textarea{
-    @apply textarea textarea-bordered;
+textarea {
+  @apply textarea textarea-bordered;
 }
 .form-error {
   @apply text-red text-sm;

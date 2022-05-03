@@ -18,55 +18,57 @@
         FITNESS classes, relax by the indoor or outdoor pool and on your way out
         enjoy a refreshing beverage at THE Café!
       </p>
-      <form >
+      <form @submit.prevent="handleSubmit">
         <div
           class="flex flex-col md:flex-wrap md:flex-row mx-4 my-12 justify-between"
         >
           <div class="form-group md:w-[50%] md:pr-4 pt-4 md:pt-0">
             <input
               type="text"
-              class="w-full bg-white rounded-[0px] border-black text-black"
+              class="w-full"
               placeholder="First Name"
               required
+              v-model="form.first_name"
             />
           </div>
           <div class="form-group md:w-[50%] pt-4 md:pt-0">
             <input
               type="text"
-              class="w-full bg-white rounded-[0px] border-black text-black"
+              class="w-full"
               placeholder="Last Name"
               required
+              v-model="form.last_name"
             />
           </div>
           <div class="form-group md:w-[50%] pt-4 md:pr-4">
             <input
               type="email"
-              class="w-full bg-white rounded-[0px] border-black text-black"
+              class="w-full"
               placeholder="Email Address"
               required
+              v-model="form.email"
             />
           </div>
           <div class="form-group md:w-[50%] pt-4">
-            <input
-              type="text"
-              class="w-full bg-white rounded-[0px] border-black text-black"
+            <phone-input
+              class="w-full"
               placeholder="Mobile Phone"
               required
+              v-model="form.phone"
             />
           </div>
         </div>
 
         <div class="form-group pt-1 mx-4">
-          <select
-            class="w-full  rounded-[0px]"
-            required
-          >
+          <select class="w-full rounded-[0px]" required v-model="form.club_id">
             <option value="">Select a Club</option>
-            <option v-for="{ club_name, club_id } in locations" :Value="id">{{ club_name }}</option>
+            <option v-for="{ club_name, club_id } in locations" :Value="id">
+              {{ club_name }}
+            </option>
           </select>
 
           <div class="pt-8">
-            <input type="checkbox" required />
+            <input type="checkbox" required v-model="form.consent" />
             <label class="pl-4"
               >I hereby consent to receive phone, text and email messages from
               or on behalf of The Athletic Club at the telephone number and
@@ -90,14 +92,26 @@
   </div>
 </template>
 
-
 <script setup>
+import Noty from "noty";
 let loading = false;
 const { data: locations } = await useFetch("/api/locations");
 
-const handleSubmit = () => {
+const form = reactive({
+  first_name: "",
+  last_name: "",
+  email: "",
+  phone: "",
+  club_id: "",
+  consent: false,
+});
+
+const handleSubmit = async () => {
   loading = true;
-  const response = true;
+  const response = await $fetch("/api/free-trial", {
+    method: "POST",
+    body: form,
+  });
 
   if (response) {
     new Noty({
@@ -118,13 +132,13 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
-input{
-    @apply input;
+input {
+  @apply input;
 }
-select{
-    @apply select;
+select {
+  @apply select;
 }
-input[type=checkbox]{
-    @apply checkbox;
+input[type="checkbox"] {
+  @apply checkbox;
 }
 </style>

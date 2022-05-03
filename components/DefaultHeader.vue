@@ -130,7 +130,10 @@
               class="inline-flex items-center font-black font-display text-cool-indigo-800 text-xl"
               href="/"
             >
-              <img class="h-10 sm:h-9 w-3/5 md:h-10 xl:h-8 object-contain" src="header-logo.png" />
+              <img
+                class="h-10 sm:h-9 w-3/5 md:h-10 xl:h-8 object-contain"
+                src="/header-logo.png"
+              />
             </a>
           </div>
         </div>
@@ -251,61 +254,65 @@
     </div>
   </nav>
 
-  <location-header v-if="route?.name === 'locations-club_id'" />
+  <main class="w-full bg-primary">
+    <location-header v-if="route?.name === 'locations-club_id'" />
+    <home-page-header v-if="route?.name === 'index'" />
+  </main>
 </template>
 
-<script >
-import Noty from "noty";
-
-export default {
-  name: "DefaultHeader",
-  data() {
-    return {
-      showSidebar: false,
-      Noty,
-    };
-  },
-  methods: {
-    toggleShowSidebar() {
-      this.showSidebar = !this.showSidebar;
-    },
-    notAvailable() {
-      new Noty({
-        type: "warning",
-        theme: "sunset",
-        text: "Feature Not Available!",
-        timeout: 7500,
-      }).show();
-    },
-  },
-  setup() {
-    const route = useRoute();
-
-    return { route };
-  },
-};
-</script>
-
-// <script setup>
+//
+<script>
 // import Noty from "noty";
 
-// let showSidebar = false;
-
-// const toggleShowSidebar = () => {
+// export default {
+//   name: "DefaultHeader",
+//   data() {
+//     return {
+//       showSidebar: false,
+//       Noty,
+//     };
+//   },
+//   methods: {
+//     toggleShowSidebar() {
 //       this.showSidebar = !this.showSidebar;
-//     }
-
-//     const notAvailable = () => {
+//     },
+//     notAvailable() {
 //       new Noty({
 //         type: "warning",
 //         theme: "sunset",
 //         text: "Feature Not Available!",
 //         timeout: 7500,
 //       }).show();
-//     };
+//     },
+//   },
+//   setup() {
+//     const route = useRoute();
 
-//         const route = useRoute();
+//     return { route };
+//   },
+// };
+//
+</script>
 
-// </script>
+<script setup>
+import Noty from "noty";
+
+let showSidebar = false;
+
+const toggleShowSidebar = () => {
+  this.showSidebar = !this.showSidebar;
+};
+
+const notAvailable = () => {
+  new Noty({
+    type: "warning",
+    theme: "sunset",
+    text: "Feature Not Available!",
+    timeout: 7500,
+  }).show();
+};
+
+const route = useRoute();
+</script>
 
 <style scoped></style>

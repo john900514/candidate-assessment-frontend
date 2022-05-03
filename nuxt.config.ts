@@ -13,9 +13,8 @@ export default defineNuxtConfig({
     },
     components:[
         '~/components',
-        '~/components/HomePageCarousel',
-        '~/components/HomePageCarousel/Slides',
         '~/components/locations',
         '~/components/page-specific-headers',
+        '~/components/carousel-slides',
     ],
 })

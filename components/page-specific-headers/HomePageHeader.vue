@@ -1,39 +1,32 @@
 <template>
-  <div class="w-full h-screen">
-    <Carousel :autoplay="200000" :wrap-around="true">
-      <Slide>
+  <ClientOnly>
+    <Carousel>
+      <Slide :key="1">
         <div class="carousel__item">
-          <home-page-carousel-slide-1/>
+          <HomePageCarouselSlide1 />
         </div>
       </Slide>
-      <!-- 
-            <template #addons>
-                <Pagination />
-            </template> -->
+      <Slide :key="2">
+        <div class="carousel__item">
+          <HomePageCarouselSlide2 />
+        </div>
+      </Slide>
+      <Slide :key="3">
+        <div class="carousel__item">
+          <HomePageCarouselSlide3 />
+        </div>
+      </Slide>
+
+      <template #addons>
+        <Pagination />
+      </template>
     </Carousel>
-  </div>
+  </ClientOnly>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+<script setup>
+import { Carousel, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
-import HomePageCarouselSlide1 from "./Slides/HomePageCarouselSlide1.vue"
-
-export default {
-  name: "HomeCarousel",
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-    HomePageCarouselSlide1
-  },
-
-  data() {
-    return {};
-  },
-};
 </script>
 
 <style>

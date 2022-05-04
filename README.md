@@ -14,6 +14,8 @@ This assessment repo is built on top of:
 
 You will need node 16+.
 
+First, go ahead and fork the repository.  Pull down the code.
+
 Make sure to install the dependencies:
 
 ```bash

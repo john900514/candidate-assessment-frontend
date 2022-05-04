@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;display=swap"
       rel="stylesheet"
     />
+    <Link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
   </Head>
   <div class="min-h-screen overflow-hidden">
     <div class="relative overflow-hidden bg-primary from-gray-50 to-white">
